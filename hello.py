@@ -1,4 +1,5 @@
 from flask import Flask , make_response
+from flask import redirect
 app=Flask(__name__)
 
 @app.route('/<name>')
@@ -15,5 +16,11 @@ def response():
 	response.set_cookie('answer','10')
 	return response
 
+
+@app.route('/redirect/')
+def redirect2google():
+	return redirect('http://www.google.com')
+
+
 if __name__=='__main__':
-	app.run(debug=True)
+	app.run(debug=True, port=5000)
