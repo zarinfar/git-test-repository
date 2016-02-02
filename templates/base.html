@@ -1,0 +1,32 @@
+
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/static/js/bootstrap.js">
+
+		{#<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mystyle.css') }}">#}
+		
+		{% block head %}
+
+
+			<title>
+				{% block title %}
+
+				{% endblock %}
+			</title>
+			
+	
+		{% endblock %}
+	</head>
+
+	<body>
+		{% block navbar %}
+
+		{% endblock %}
+
+		{% block body %}
+			{% block content %}
+			{% endblock %}
+		{% endblock %}
+	</body>
+</html>
