@@ -99,7 +99,6 @@ def user_info():
     form_user_info.first_name.data = ''
     form_user_info.last_name.data = ''
     form_user_info.phone_number.data = ''
-    #
     # return render_template('UserInfo.html', form=form_user_info,
     #                        first_name=first_name,
     #                        last_name=last_name,
