@@ -74,8 +74,8 @@ def internal_server_error(error_this_name_is_optional):
     return render_template('500.html'), 500
 
 
-# @app.route('/input_data_from_form/', methods=['GET', 'POST'])
-@app.route('/input_data_from_form/', methods=['POST'])
+@app.route('/input_data_from_form/', methods=['GET', 'POST'])
+# @app.route('/input_data_from_form/', methods=['POST'])
 def input_data_from_form():
     name = None
     form = Give_data()
@@ -89,7 +89,6 @@ def input_data_from_form():
 @app.route('/user_info_input_data/', methods=['GET', 'POST'])
 def user_info():
     form_user_info = UserInfo()
-
 
     first_name = form_user_info.first_name.data
     last_name = form_user_info.last_name.data
