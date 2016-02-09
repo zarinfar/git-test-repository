@@ -35,14 +35,20 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>Hello, {% if name %}{{name}}{% else%} Guest!{% endif %}</h1>
+		<h1>Hello, {{first_name}} {{last_name}} {{phone_number}}</h1>
 	</div>
 
-<form method="POST">
+<form method="GET">
     {{ form.hidden_tag() }}
     {{ form.csrf_token }}
-    {{ form.name.label }} {{ form.name(size=20) }}
-    {{ form.submit }}
+{#    {{ form_user_info.first_name.label }} {{ form_user_info.first_name(size=20) }}#}
+{#    {{ form_user_info.lsat_name.label }} {{ form_user_info.lsat_name(size=20) }}#}
+{#    {{ form_user_info.phone_number.label }} {{ form_user_info.phone_number(size=20) }}#}
+    {{ form_user_info.first_name.label }}
+    {{ form_user_info.lsat_name.label }}
+    {{ form_user_info.phone_number.label }}
+
+    {{ form_user_info.submit }}
 </form>
 
 
