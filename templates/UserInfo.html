@@ -38,15 +38,15 @@
 		<h1>Hello, {{first_name}} {{last_name}} {{phone_number}}</h1>
 	</div>
 
-<form method="GET">
-    {{ form.hidden_tag() }}
-    {{ form.csrf_token }}
-{#    {{ form_user_info.first_name.label }} {{ form_user_info.first_name(size=20) }}#}
-{#    {{ form_user_info.lsat_name.label }} {{ form_user_info.lsat_name(size=20) }}#}
-{#    {{ form_user_info.phone_number.label }} {{ form_user_info.phone_number(size=20) }}#}
-    {{ form_user_info.first_name.label }}
-    {{ form_user_info.lsat_name.label }}
-    {{ form_user_info.phone_number.label }}
+<form method="post">
+{#    {{ form.hidden_tag() }}#}
+{#    {{ form.csrf_token }}#}
+    {{ form_user_info.first_name.label }} {{ form_user_info.first_name(size=20) }}
+    {{ form_user_info.last_name.label }} {{ form_user_info.last_name(size=20) }}
+    {{ form_user_info.phone_number.label }} {{ form_user_info.phone_number(size=20) }}
+{#    {{ form_user_info.first_name.label }}#}
+{#    {{ form_user_info.last_name.label }}#}
+{#    {{ form_user_info.phone_number.label }}#}
 
     {{ form_user_info.submit }}
 </form>
