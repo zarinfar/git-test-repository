@@ -35,7 +35,9 @@
 {% block content %}
 <div class="container">
 	<div class="page-header">
-		<h1>Hello, {{first_name}} {{last_name}} {{phone_number}}</h1>
+		<h1>Hello, {% if first_name %}{{first_name}}{% else%} Guest!{% endif %} <br />
+            {% if last_name %}your last name is : {{last_name}}{% else%}{% endif %} <br />
+            {% if phone_number %}your number is : {{phone_number}}{% else%}{% endif %}</h1>
 	</div>
 
 <form method="post">
@@ -44,6 +46,12 @@
     {{ form_user_info.first_name.label }} {{ form_user_info.first_name(size=20) }}
     {{ form_user_info.last_name.label }} {{ form_user_info.last_name(size=20) }}
     {{ form_user_info.phone_number.label }} {{ form_user_info.phone_number(size=20) }}
+
+{#    {{ form.first_name.label }} {{ form.first_name(size=20) }}#}
+{#    {{ form.last_name.label }} {{ form.last_name(size=20) }}#}
+{#    {{ form.phone_number.label }} {{ form.phone_number(size=20) }}#}
+
+
     {{ form_user_info.submit }}
 </form>
 

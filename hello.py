@@ -20,13 +20,15 @@ class UserInfo(Form):
     phone_number = StringField('phone :')
     submit = SubmitField('Submit')
 
+
 @app.route('/<name>')
 def index(name):
     return 'hello %s' % name
 
 
+
 @app.route('/')
-def badrequest():
+def bad_request():
     return '<h1>bad request</h1>', 400
 
 
@@ -98,6 +100,11 @@ def user_info():
     form_user_info.last_name.data = ''
     form_user_info.phone_number.data = ''
     #
+    # return render_template('UserInfo.html', form=form_user_info,
+    #                        first_name=first_name,
+    #                        last_name=last_name,
+    #                        phone_number=phone_number)
+
     return render_template('UserInfo.html', form_user_info=form_user_info,
                            first_name=first_name,
                            last_name=last_name,
