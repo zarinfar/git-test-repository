@@ -39,10 +39,10 @@
 	</div>
 
 <form method="POST">
-    {{ use_session_form.hidden_tag() }}
-    {{ use_session_form.csrf_token }}
-    {{ use_session_form.name.label }} {{ use_session_form.name(size=20) }}
-    {{ use_session_form.submit }}
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    {{ form.submit }}
 </form>
 
 
